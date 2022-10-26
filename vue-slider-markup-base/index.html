@@ -28,12 +28,12 @@
                     </div>
                 </div>
 
-                <div class="thumbs">
-                    <div class="prev"></div>
-                    <div class="next"></div>
-                    <div class="thumb active" :class="firstSlide === indez ? 'active' :''"
-                    v-for="(img,index) in album.image"
-                    @click="showSlide(index)">
+                <div class="thumbs" :class="firstSlide === index ? 'active' :''"
+                v-for="(img,index) in album.image"
+                @click="showSlide(index)">
+                    <div class="prev"><a @click.prevent="downBtn" class="downbtn" href=""><i class="fa-solid fa-circle-chevron-down"></i></a></div>
+                    <div class="next"><a @click.prevent="upBtn" class="upbtn" href=""><i class="fa-solid fa-circle-chevron-up"></i></a></div>
+                    <div class="thumb active" ></div>
                         <img :src="img.jpg" alt="Svezia"/>
                     </div>
                     <div class="thumb">

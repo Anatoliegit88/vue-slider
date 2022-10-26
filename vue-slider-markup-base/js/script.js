@@ -45,5 +45,26 @@ createApp({
       },
     };
   },
-  methods: {},
-});
+  methods: {
+    downBtn: function () {
+      if (this.firstSlide < album.img.length - 1) {
+        this.firstSlide++;
+      } else {
+        this.firstSlide = 0;
+      }
+    },
+    upBtn: function () {
+      if (this.firstSlide > 0) {
+        this.firstSlide--;
+      } else {
+        this.firstSlide = album.img.length - 1;
+      }
+    },
+    showSlide(onClick) {
+      this.firstSlide = onClick;
+    },
+  },
+  created: function () {
+    console.log(album);
+  },
+}).mount("#app");
